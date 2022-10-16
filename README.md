@@ -8,7 +8,7 @@ Task1 - Create a To-Do-List web app. [Visit Now](https://anand-3399.github.io/LG
 
 ![1665458953917](Task1%20To-Do-List/image/README/1665458953917.png)
 
-Task 2- Create a Web Application Using React JS . [Visit Now](Task2 ReactApp\README.md)
+Task 2- Create a Web Application Using React JS.
 
 ![1665458953917](Task2%20ReactApp/image/README/1665915770934.png)
 
