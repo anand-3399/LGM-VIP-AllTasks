@@ -62,7 +62,7 @@ function updateRecord(formData) {
     selectedRow.cells[4].innerHTML = formData.email;
 }
 function onDelete(td) {
-    if (confirm("Voce quer deletar?")) {
+    if (confirm("Are you sure you want to delete this Entry?")) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         resetForm();
