@@ -1,18 +1,18 @@
 var selectedRow = null;
 
-function onformSubmit(){
-    if(validate()){
+function onformSubmit() {
+    if (validate()) {
         var formData = readFormData();
         console.log(formData)
-        if(selectedRow==null)
-        insertNewRecord(formData);
+        if (selectedRow == null)
+            insertNewRecord(formData);
         else
-        updateRecord(formData)
+            updateRecord(formData)
 
         resetForm();
     }
 }
-function readFormData(){
+function readFormData() {
     var formData = {};
     formData["fullName"] = document.getElementById("fullName").value;
     formData["telefone"] = document.getElementById("telefone").value;
@@ -21,7 +21,7 @@ function readFormData(){
     formData["email"] = document.getElementById("email").value;
     return formData;
 }
-function insertNewRecord(data){
+function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
@@ -35,18 +35,18 @@ function insertNewRecord(data){
     cell5 = newRow.insertCell(4)
     cell5.innerHTML = data.email;
     cell6 = newRow.insertCell(5);
-    cell6.innerHTML=`<a onClick="onEdit(this)">Edit</a>
+    cell6.innerHTML = `<a onClick="onEdit(this)">Edit</a>
                      <a onClick="onDelete(this)">Delete</a>`;
 }
-function resetForm(){
-    document.getElementById("fullName").value="";
-    document.getElementById("telefone").value="";
-    document.getElementById("Sexo").value="";
-    document.getElementById("cidade").value="";
-    document.getElementById("email").value="";
+function resetForm() {
+    document.getElementById("fullName").value = "";
+    document.getElementById("telefone").value = "";
+    document.getElementById("Sexo").value = "";
+    document.getElementById("cidade").value = "";
+    document.getElementById("email").value = "";
     selectedRow = null;
 }
-function onEdit(td){
+function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
     document.getElementById("telefone").value = selectedRow.cells[1].innerHTML;
@@ -54,15 +54,15 @@ function onEdit(td){
     document.getElementById("cidade").value = selectedRow.cells[3].innerHTML;
     document.getElementById("email").value = selectedRow.cells[4].innerHTML;
 }
-function updateRecord(formData){
+function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
     selectedRow.cells[1].innerHTML = formData.telefone;
     selectedRow.cells[2].innerHTML = formData.Sexo;
     selectedRow.cells[3].innerHTML = formData.cidade;
     selectedRow.cells[4].innerHTML = formData.email;
 }
-function onDelete(td){
-    if(confirm("Voce quer deletar?")){
+function onDelete(td) {
+    if (confirm("Voce quer deletar?")) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         resetForm();
@@ -81,14 +81,14 @@ function validate() {
     return isValid;
 }
 
-function mascara(telefone){ 
-    if(telefone.value.length == 0)
-        telefone.value = '(' + telefone.value; 
-    if(telefone.value.length == 3)
-        telefone.value = telefone.value + ') '; 
-    if(telefone.value.length==6)
-        telefone.value = telefone.value + '-';
-    if(telefone.value.length == 11)
+function mascara(telefone) {
+    if (telefone.value.length == 0)
+        telefone.value = '(+' + telefone.value;
+    if (telefone.value.length == 4)
+        telefone.value = telefone.value + ') ';
+    // if (telefone.value.length == 6)
+    //     telefone.value = telefone.value + '-';
+    if (telefone.value.length == 12)
         telefone.value = telefone.value + '-';
 
 }

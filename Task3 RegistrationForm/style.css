@@ -1,27 +1,35 @@
-body{
-    background-color: yellowgreen;
+body {
+    /* background-color: aqua; */
+    background-image: linear-gradient(to right, rgb(204 255 0 / 31%), rgb(0, 242, 255));
+    /* color: white; */
 }
-table{
+
+table {
     width: 100%;
 }
 
-table{
+table {
     border-collapse: collapse;
 }
-table.list{
-    width:100%;
+
+table.list {
+    width: 100%;
 }
 
-td, th {
+td,
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-tr:nth-child(even),table.list thead>tr {
+
+tr:nth-child(even),
+table.list thead>tr {
     background-color: #dddddd;
 }
 
-input[type=text], input[type=number] {
+input[type=text],
+input[type=number] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -30,7 +38,8 @@ input[type=text], input[type=number] {
     border-radius: 4px;
     box-sizing: border-box;
 }
-select{
+
+select {
     width: 100%;
     padding: 8px 10px;
     margin: 8px 0;
@@ -38,8 +47,9 @@ select{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-} 
-input[type=email]{
+}
+
+input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -47,9 +57,9 @@ input[type=email]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}          
+}
 
-input[type=submit]{
+input[type=submit] {
     width: 30%;
     background-color: #ddd;
     color: #000;
@@ -60,22 +70,22 @@ input[type=submit]{
     cursor: pointer;
 }
 
-form div.form-action-buttons{
+form div.form-action-buttons {
     text-align: right;
 }
 
-a{
+a {
     cursor: pointer;
     text-decoration: underline;
     color: #0000ee;
     margin-right: 4px;
 }
 
-label.validation-error{
-    color:   red;
+label.validation-error {
+    color: red;
     margin-left: 5px;
 }
 
-.hide{
-    display:none;
+.hide {
+    display: none;
 }
